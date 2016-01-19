@@ -1,0 +1,28 @@
+#encoding:UTF-8
+import urllib
+import urllib.request
+import re
+
+
+
+
+
+url = "http://seo.chinaz.com/?host="
+user = input()
+
+data = urllib.request.urlopen(url+user).read()
+data = data.decode('UTF-8')
+ 
+#print(user)
+ 
+
+
+
+r = re.findall(r'baiduapp/\d.gif',data)
+s1=str(r)
+br = re.findall(r'[0-9]',s1)
+print ('br',br)
+p = re.findall(r'ranks/Rank_\d.gif',data)
+s2=str(p)
+pr = re.findall(r'[0-9]',s2)
+print ('pr',pr)
